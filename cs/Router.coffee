@@ -13,6 +13,7 @@ Router = Backbone.Router.extend
 				return
 			id = firstDesktop.get('id')
 
+		id = parseInt id, 10
 		@app.collections.currentDesktopNotes.reset @app.collections.notes.where(desktop_id: id)
 
 
