@@ -1,0 +1,18 @@
+{
+  "name": "liimlap.ly",
+  "version": "0.0.1",
+  "authors": [
+    "SAleksej <alex.rainbow.unicorn@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marionette": "~1.8.0"
+  }
+}
