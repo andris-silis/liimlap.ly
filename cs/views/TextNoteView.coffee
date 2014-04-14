@@ -1,2 +1,3 @@
-TextNoteView = Backbone.View.extend
-	template: Handlebars.compile($("#text-note-template").html());
+TextNoteView = Backbone.Marionette.ItemView.extend
+	tagName: 'li'
+	template: Handlebars.compile($('#text-note-template').html());

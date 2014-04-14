@@ -1,2 +1,3 @@
-ImageNoteView = Backbone.View.extend
-	template: Handlebars.compile($("#image-note-template").html());
+ImageNoteView = Backbone.Marionette.ItemView.extend
+	tagName: 'li'
+	template: Handlebars.compile($('#image-note-template').html());
