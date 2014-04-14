@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "marionette": "~1.8.0"
+    "marionette": "~1.8.0",
+    "require-cs": "~0.4.4"
   }
 }
