@@ -14,14 +14,22 @@
         <!-- <script src="js/vendor/modernizr-2.7.1.min.js"></script> -->
     </head>
     <body>
+        <h2>Menu</h2>
+        <div id="desktops-menu"></div>
+
+        <h2>Desktop</h2>
         <div id="desktop"></div>
 
         <script id="text-note-template" type="text/x-handlebars-template">
-            {{text}}
+            {{ text }}
         </script>
 
         <script id="image-note-template" type="text/x-handlebars-template">
-            {{url}}
+            {{ url }}
+        </script>
+
+        <script id="desktop-menu-item-template" type="text/x-handlebars-template">
+            <a href="#desktop/{{ id }}">{{ title }}</a>
         </script>
 
         <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -43,6 +51,10 @@
         <script src="cs/views/js/TextNoteView.js"></script>
         <script src="cs/views/js/ImageNoteView.js"></script>
         <script src="cs/views/js/DesktopView.js"></script>
+
+        <script src="cs/views/js/DesktopsMenuItemView.js"></script>
+        <script src="cs/views/js/DesktopsMenuView.js"></script>
+
 
         <script src="cs/js/data.js"></script>
         <script src="cs/js/boot.js"></script>
