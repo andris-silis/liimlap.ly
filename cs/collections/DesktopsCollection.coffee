@@ -1,0 +1,1 @@
+DesktopsCollection = Backbone.Collection.extend

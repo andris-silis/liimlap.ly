@@ -1,0 +1,1 @@
+DesktopModel = Backbone.Model.extend {}
