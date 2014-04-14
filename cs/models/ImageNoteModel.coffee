@@ -1,0 +1,2 @@
+ImageNoteModel = NoteModel.extend
+  	initialize: ->

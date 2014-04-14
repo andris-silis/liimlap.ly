@@ -1,0 +1,2 @@
+TextNoteModel = NoteModel.extend
+  	initialize: ->

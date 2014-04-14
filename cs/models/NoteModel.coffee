@@ -1,0 +1,1 @@
+NoteModel = Backbone.Model.extend {}
