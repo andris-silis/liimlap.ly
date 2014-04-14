@@ -5,10 +5,13 @@ data = {};
 
 data.desktops = [
   {
+    id: 1,
     title: 'Desktop 1'
   }, {
+    id: 2,
     title: 'Desktop 2'
   }, {
+    id: 3,
     title: 'Desktop 3'
   }
 ];
