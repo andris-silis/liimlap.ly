@@ -1,5 +1,7 @@
 $ ->
-	app = {}
+	window.app = app = {}
+
+
 	app.collections = {}
 	app.views = {}
 
@@ -30,5 +32,3 @@ $ ->
 
 	Backbone.history.start()
 
-	# For easy console usage
-	window.app = app
