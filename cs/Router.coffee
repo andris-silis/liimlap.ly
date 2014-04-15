@@ -12,10 +12,13 @@ Router = Backbone.Router.extend
 
 	desktop: (id) ->
 		if not id
-			firstDesktop = @app.collections.desktops.at(0)
-			if not firstDesktop
-				return
-			id = firstDesktop.get('id')
+			desktop = @desktopCollection.at 0
+		else
+			id = parseInt id, 10
+			desktop = @desktopCollection.get id
 
-		id = parseInt id, 10
+		if not desktop
+			return
+
+		@currentDesktop = desktop
 		@currentDesktopNotesCollection.reset @notesCollection.where(desktop_id: id)
