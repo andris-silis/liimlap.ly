@@ -4,17 +4,16 @@ $(function() {
   app = {};
   app.collections = {};
   app.views = {};
-  router = new Router({
-    app: app
-  });
+  app.stateCollections = {
+    currentDesktopNotes: new NotesCollection
+  };
   app.collections = {
     desktops: new DesktopsCollection(data.desktops),
-    notes: new NotesCollection(data.notes),
-    currentDesktopNotes: new NotesCollection
+    notes: new NotesCollection(data.notes)
   };
   app.views = {
     desktop: new DesktopView({
-      collection: app.collections.currentDesktopNotes,
+      collection: app.stateCollections.currentDesktopNotes,
       el: '#desktop'
     }).render(),
     desktopsMenu: new DesktopsMenuView({
@@ -22,6 +21,10 @@ $(function() {
       el: '#desktops-menu'
     }).render()
   };
-  window.app = app;
-  return Backbone.history.start();
+  router = new Router({
+    currentDesktopNotesCollection: app.stateCollections.currentDesktopNotes,
+    notesCollection: app.collections.notes
+  });
+  Backbone.history.start();
+  return window.app = app;
 });

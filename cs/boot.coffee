@@ -3,7 +3,6 @@ $ ->
 	app.collections = {}
 	app.views = {}
 
-	router = new Router app: app
 	app.stateCollections =
 		currentDesktopNotes: new NotesCollection
 
@@ -21,7 +20,12 @@ $ ->
 			el: '#desktops-menu'
 		).render()
 
-
-	window.app = app
+	router = new Router(
+		currentDesktopNotesCollection: app.stateCollections.currentDesktopNotes
+		notesCollection: app.collections.notes
+	)
 
 	Backbone.history.start()
+
+	# For easy console usage
+	window.app = app

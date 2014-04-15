@@ -3,8 +3,7 @@ Router = Backbone.Router.extend
 		'': 'desktop',
 		'desktop/:id': 'desktop'
 
-	initialize: (options) ->
-		@app = options.app
+	initialize: ({@notesCollection, @currentDesktopNotesCollection}) ->
 
 	desktop: (id) ->
 		if not id
@@ -14,6 +13,4 @@ Router = Backbone.Router.extend
 			id = firstDesktop.get('id')
 
 		id = parseInt id, 10
-		@app.collections.currentDesktopNotes.reset @app.collections.notes.where(desktop_id: id)
-
-
+		@currentDesktopNotesCollection.reset @notesCollection.where(desktop_id: id)
