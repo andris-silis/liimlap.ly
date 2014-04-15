@@ -1,1 +1,2 @@
-DesktopsCollection = Backbone.Collection.extend {}
+DesktopsCollection = Backbone.Collection.extend
+	url: 'desktops'

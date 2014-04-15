@@ -2,5 +2,6 @@
 var NotesCollection;
 
 NotesCollection = Backbone.Collection.extend({
-  model: NoteModel
+  model: NoteModel,
+  url: 'notes'
 });
