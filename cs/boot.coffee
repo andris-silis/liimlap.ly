@@ -24,6 +24,12 @@ $ ->
 			currentDesktop: app.currentDesktop
 			el: '#desktops-menu'
 		).render()
+		createNote: new CreateNoteView(
+			notesCollection: app.collections.notes
+			currentDesktop: app.currentDesktop
+			el: '#add-note'
+		).render()
+
 
 	router = new Router(
 		desktopCollection: app.collections.desktops
