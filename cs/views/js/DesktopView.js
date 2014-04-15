@@ -3,5 +3,10 @@ var DesktopView;
 
 DesktopView = Backbone.Marionette.CollectionView.extend({
   tagName: 'ul',
-  itemView: TextNoteView
+  getItemView: function(item) {
+    if (item.get('type') === 'image') {
+      return ImageNoteView;
+    }
+    return TextNoteView;
+  }
 });

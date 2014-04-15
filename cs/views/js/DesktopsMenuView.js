@@ -3,5 +3,10 @@ var DesktopsMenuView;
 
 DesktopsMenuView = Backbone.Marionette.CollectionView.extend({
   tagName: 'ul',
-  itemView: DesktopsMenuItemView
+  itemView: DesktopsMenuItemView,
+  itemViewOptions: function() {
+    return {
+      currentDesktop: this.options.currentDesktop
+    };
+  }
 });

@@ -19,6 +19,7 @@ $(function() {
     }).render(),
     desktopsMenu: new DesktopsMenuView({
       collection: app.collections.desktops,
+      currentDesktop: app.currentDesktop,
       el: '#desktops-menu'
     }).render()
   };
