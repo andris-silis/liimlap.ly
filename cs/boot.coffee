@@ -4,15 +4,16 @@ $ ->
 	app.views = {}
 
 	router = new Router app: app
+	app.stateCollections =
+		currentDesktopNotes: new NotesCollection
 
 	app.collections =
 		desktops: new DesktopsCollection data.desktops
 		notes: new NotesCollection data.notes
-		currentDesktopNotes: new NotesCollection
 
 	app.views =
 		desktop: new DesktopView(
-			collection: app.collections.currentDesktopNotes
+			collection: app.stateCollections.currentDesktopNotes
 			el: '#desktop'
 		).render()
 		desktopsMenu: new DesktopsMenuView(
