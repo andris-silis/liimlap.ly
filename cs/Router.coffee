@@ -3,7 +3,12 @@ Router = Backbone.Router.extend
 		'': 'desktop',
 		'desktop/:id': 'desktop'
 
-	initialize: ({@notesCollection, @currentDesktopNotesCollection}) ->
+	initialize: ({
+		@desktopCollection,
+		@notesCollection,
+		@currentDesktopNotesCollection,
+		@currentDesktop
+	}) ->
 
 	desktop: (id) ->
 		if not id

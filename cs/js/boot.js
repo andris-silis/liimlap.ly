@@ -22,6 +22,7 @@ $(function() {
     }).render()
   };
   router = new Router({
+    desktopCollection: app.collections.desktops,
     currentDesktopNotesCollection: app.stateCollections.currentDesktopNotes,
     notesCollection: app.collections.notes
   });
