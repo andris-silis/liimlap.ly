@@ -4,6 +4,7 @@ $(function() {
   window.app = app = {};
   app.collections = {};
   app.views = {};
+  app.currentDesktop = new DesktopModel;
   app.stateCollections = {
     currentDesktopNotes: new NotesCollection
   };
@@ -24,8 +25,8 @@ $(function() {
   router = new Router({
     desktopCollection: app.collections.desktops,
     currentDesktopNotesCollection: app.stateCollections.currentDesktopNotes,
-    notesCollection: app.collections.notes
+    notesCollection: app.collections.notes,
+    currentDesktop: app.currentDesktop
   });
-  Backbone.history.start();
-  return window.app = app;
+  return Backbone.history.start();
 });

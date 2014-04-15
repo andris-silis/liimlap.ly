@@ -10,15 +10,17 @@ Router = Backbone.Router.extend({
     this.desktopCollection = _arg.desktopCollection, this.notesCollection = _arg.notesCollection, this.currentDesktopNotesCollection = _arg.currentDesktopNotesCollection, this.currentDesktop = _arg.currentDesktop;
   },
   desktop: function(id) {
-    var firstDesktop;
+    var desktop;
     if (!id) {
-      firstDesktop = this.app.collections.desktops.at(0);
-      if (!firstDesktop) {
-        return;
-      }
-      id = firstDesktop.get('id');
+      desktop = this.desktopCollection.at(0);
+    } else {
+      id = parseInt(id, 10);
+      desktop = this.desktopCollection.get(id);
     }
-    id = parseInt(id, 10);
+    if (!desktop) {
+      return;
+    }
+    this.currentDesktop = desktop;
     return this.currentDesktopNotesCollection.reset(this.notesCollection.where({
       desktop_id: id
     }));
