@@ -3,6 +3,8 @@ $ ->
 	app.collections = {}
 	app.views = {}
 
+	app.currentDesktop = new DesktopModel
+
 	app.stateCollections =
 		currentDesktopNotes: new NotesCollection
 
@@ -23,6 +25,7 @@ $ ->
 	router = new Router(
 		currentDesktopNotesCollection: app.stateCollections.currentDesktopNotes
 		notesCollection: app.collections.notes
+		currentDesktop: app.currentDesktop
 	)
 
 	Backbone.history.start()

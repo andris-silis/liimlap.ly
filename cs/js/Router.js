@@ -7,7 +7,7 @@ Router = Backbone.Router.extend({
     'desktop/:id': 'desktop'
   },
   initialize: function(_arg) {
-    this.notesCollection = _arg.notesCollection, this.currentDesktopNotesCollection = _arg.currentDesktopNotesCollection;
+    this.desktopCollection = _arg.desktopCollection, this.notesCollection = _arg.notesCollection, this.currentDesktopNotesCollection = _arg.currentDesktopNotesCollection, this.currentDesktop = _arg.currentDesktop;
   },
   desktop: function(id) {
     var firstDesktop;
