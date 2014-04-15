@@ -1,3 +1,6 @@
 DesktopView = Backbone.Marionette.CollectionView.extend
 	tagName: 'ul'
-	itemView: TextNoteView
+	getItemView: (item) ->
+		if item.get('type') == 'image'
+			return ImageNoteView
+		TextNoteView
