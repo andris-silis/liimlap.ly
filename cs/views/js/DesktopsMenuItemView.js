@@ -3,5 +3,12 @@ var DesktopsMenuItemView;
 
 DesktopsMenuItemView = Backbone.Marionette.ItemView.extend({
   tagName: 'li',
+  attributes: function() {
+    if (this.model === this.options.currentDesktop) {
+      return {
+        "class": 'active'
+      };
+    }
+  },
   template: Handlebars.compile($('#desktop-menu-item-template').html())
 });

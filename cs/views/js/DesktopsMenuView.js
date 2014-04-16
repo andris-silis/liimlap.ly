@@ -3,6 +3,9 @@ var DesktopsMenuView;
 
 DesktopsMenuView = Backbone.Marionette.CollectionView.extend({
   tagName: 'ul',
+  attributes: {
+    'class': 'side-nav'
+  },
   itemView: DesktopsMenuItemView,
   itemViewOptions: function() {
     return {
