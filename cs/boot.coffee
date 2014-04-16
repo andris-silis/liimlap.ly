@@ -9,6 +9,10 @@ $ ->
 		desktops: new DesktopsCollection data.desktops
 		notes: new NotesCollection data.notes
 
+	app.desktopSubset = new Backbone.CollectionSubset(
+	  parent: app.collections.notes,
+	  filter: -> true
+	)
 
 	app.currentDesktop = new DesktopModel
 
