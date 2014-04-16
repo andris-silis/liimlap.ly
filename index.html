@@ -14,14 +14,16 @@
         <!-- <script src="js/vendor/modernizr-2.7.1.min.js"></script> -->
     </head>
     <body>
-        <h2>Add note</h2>
-        <div id="add-note"></div>
+        <script id="application-layout-template" type="text/x-handlebars-template">
+            <h2>Add note</h2>
+            <div id="add-note"></div>
 
-        <h2>Menu</h2>
-        <div id="desktops-menu"></div>
+            <h2>Menu</h2>
+            <div id="desktops-menu"></div>
 
-        <h2>Desktop</h2>
-        <div id="desktop"></div>
+            <h2>Desktop</h2>
+            <div id="desktop"></div>
+        </script>
 
         <script id="text-note-template" type="text/x-handlebars-template">
             {{ text }}
@@ -67,6 +69,7 @@
 
 
         <script src="cs/controllers/js/DesktopsController.js"></script>
+        <script src="cs/js/ApplicationLayout.js"></script>
         <script src="cs/js/DesktopsRouter.js"></script>
 
         <script src="cs/js/data.js"></script>

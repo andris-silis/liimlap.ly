@@ -28,14 +28,26 @@ data.notes = [{
 }
 {
 	id: 3
-	desktop_id: 2
+	desktop_id: 3
 	type: 'text'
-	text: 'text value 2'
+	text: 'text value 3'
 }
 {
 	id: 4
 	desktop_id: 2
 	type: 'image'
 	url: 'http://froont.com/2'
+}
+{
+	id: 5
+	desktop_id: 2
+	type: 'text'
+	text: 'text value 2'
+}
+{
+	id: 6
+	desktop_id: 3
+	type: 'image'
+	url: 'http://froont.com/3'
 }
 ]

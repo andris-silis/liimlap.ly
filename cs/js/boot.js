@@ -4,7 +4,6 @@ $(function() {
   window.app = app = new Backbone.Marionette.Application();
   app.addInitializer(function(options) {
     this.collections = {};
-    this.views = {};
     this.collections = {
       desktops: new DesktopsCollection(data.desktops),
       notes: new NotesCollection(data.notes)
@@ -16,24 +15,8 @@ $(function() {
       }
     });
     this.currentDesktop = new DesktopModel;
-    this.stateCollections = {
+    return this.stateCollections = {
       currentDesktopNotes: this.desktopSubset.child
-    };
-    return this.views = {
-      desktop: new DesktopView({
-        collection: this.stateCollections.currentDesktopNotes,
-        el: '#desktop'
-      }).render(),
-      desktopsMenu: new DesktopsMenuView({
-        collection: this.collections.desktops,
-        currentDesktop: this.currentDesktop,
-        el: '#desktops-menu'
-      }).render(),
-      createNote: new CreateNoteView({
-        notesCollection: this.collections.notes,
-        app: this,
-        el: '#add-note'
-      }).render()
     };
   });
   app.addInitializer(function(options) {
@@ -49,6 +32,25 @@ $(function() {
       controller: desktopsController
     });
     return Backbone.history.start();
+  });
+  app.addInitializer(function(options) {
+    this.layout = new ApplicationLayout({
+      el: 'body'
+    });
+    return this.layout.render();
+  });
+  app.addInitializer(function(options) {
+    this.layout.desktopsMenu.show(new DesktopsMenuView({
+      collection: this.collections.desktops,
+      currentDesktop: this.currentDesktop
+    }));
+    this.layout.createNodeMenu.show(new CreateNoteView({
+      notesCollection: this.collections.notes,
+      app: this
+    }));
+    return this.layout.desktop.show(new DesktopView({
+      collection: this.stateCollections.currentDesktopNotes
+    }));
   });
   return app.start();
 });

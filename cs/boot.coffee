@@ -3,7 +3,6 @@ $ ->
 
 	app.addInitializer (options) ->
 		@collections = {}
-		@views = {}
 
 		@collections =
 			desktops: new DesktopsCollection data.desktops
@@ -19,22 +18,6 @@ $ ->
 		@stateCollections =
 			currentDesktopNotes: @desktopSubset.child
 
-		@views =
-			desktop: new DesktopView(
-				collection: @stateCollections.currentDesktopNotes
-				el: '#desktop'
-			).render()
-			desktopsMenu: new DesktopsMenuView(
-				collection: @collections.desktops
-				currentDesktop: @currentDesktop
-				el: '#desktops-menu'
-			).render()
-			createNote: new CreateNoteView(
-				notesCollection: @collections.notes
-				app: @
-				el: '#add-note'
-			).render()
-
 	app.addInitializer (options) ->
 		desktopsController = new DesktopsController(
 			app: @
@@ -49,5 +32,33 @@ $ ->
 		)
 
 		Backbone.history.start()
+
+	app.addInitializer (options) ->
+		@layout = new ApplicationLayout(
+			el: 'body'
+		)
+		@layout.render()
+
+	app.addInitializer (options) ->
+		@layout.desktopsMenu.show(
+			new DesktopsMenuView(
+				collection: @collections.desktops
+				currentDesktop: @currentDesktop
+			)
+		)
+
+		@layout.createNodeMenu.show(
+			new CreateNoteView(
+				notesCollection: @collections.notes
+				app: @
+			)
+		)
+
+		@layout.desktop.show(
+			new DesktopView(
+				collection: @stateCollections.currentDesktopNotes
+			)
+		)
+
 
 	app.start()
