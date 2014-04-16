@@ -4,12 +4,11 @@ Router = Backbone.Router.extend
 		'desktop/:id': 'desktop'
 
 	initialize: ({
-		@desktopCollection,
-		@notesCollection,
-		@currentDesktopNotesCollection,
-		@currentDesktop
 		@app
 		@desktopSubset
+		@desktopCollection
+		@notesCollection
+		@currentDesktopNotesCollection
 	}) ->
 
 	desktop: (id) ->
