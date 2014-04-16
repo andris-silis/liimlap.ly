@@ -5,14 +5,15 @@ $ ->
 	app.collections = {}
 	app.views = {}
 
-	app.currentDesktop = new DesktopModel
-
-	app.stateCollections =
-		currentDesktopNotes: new NotesCollection
-
 	app.collections =
 		desktops: new DesktopsCollection data.desktops
 		notes: new NotesCollection data.notes
+
+
+	app.currentDesktop = new DesktopModel
+
+	app.stateCollections =
+		currentDesktopNotes: app.desktopSubset.child
 
 	app.views =
 		desktop: new DesktopView(
