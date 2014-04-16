@@ -9,20 +9,26 @@
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-        <!-- <link rel="stylesheet" href="css/main.css"> -->
+        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+        <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+        <link rel="stylesheet" href="css/main.css">
         <!-- <script src="js/vendor/modernizr-2.7.1.min.js"></script> -->
     </head>
     <body>
         <script id="application-layout-template" type="text/x-handlebars-template">
-            <h2>Add note</h2>
-            <div id="add-note"></div>
+            <div class="row">
+                <div class="small-0 medium-2 columns">
+                    <h3>Add note</h3>
+                    <div id="add-note"></div>
 
-            <h2>Menu</h2>
-            <div id="desktops-menu"></div>
-
-            <h2>Desktop</h2>
-            <div id="desktop"></div>
+                    <h3>Menu</h3>
+                    <div id="desktops-menu"></div>
+                </div>
+                <div class="small-2 large-4 columns">
+                    <h3>Desktop</h3>
+                    <div id="desktop"></div>
+                </div>
+            </div>
         </script>
 
         <script id="text-note-template" type="text/x-handlebars-template">
