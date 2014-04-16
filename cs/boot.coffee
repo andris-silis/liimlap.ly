@@ -37,11 +37,11 @@ $ ->
 
 
 	router = new Router(
+		app: app
 		desktopSubset: app.desktopSubset
 		desktopCollection: app.collections.desktops
 		currentDesktopNotesCollection: app.stateCollections.currentDesktopNotes
 		notesCollection: app.collections.notes
-		currentDesktop: app.currentDesktop
 	)
 
 	Backbone.history.start()

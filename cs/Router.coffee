@@ -8,6 +8,7 @@ Router = Backbone.Router.extend
 		@notesCollection,
 		@currentDesktopNotesCollection,
 		@currentDesktop
+		@app
 		@desktopSubset
 	}) ->
 
@@ -21,7 +22,7 @@ Router = Backbone.Router.extend
 		if not desktop
 			return
 
-		@currentDesktop = desktop
+		@app.currentDesktop = desktop
 
 		@desktopSubset.setFilter (note) -> note.get('desktop_id') == id
 		@desktopSubset.refresh()
