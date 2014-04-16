@@ -37,6 +37,7 @@ $ ->
 
 
 	router = new Router(
+		desktopSubset: app.desktopSubset
 		desktopCollection: app.collections.desktops
 		currentDesktopNotesCollection: app.stateCollections.currentDesktopNotes
 		notesCollection: app.collections.notes
