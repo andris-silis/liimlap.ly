@@ -3,15 +3,15 @@ CreateNoteView = Backbone.View.extend
 	events:
 		'click .text': 'addText'
 		'click .image': 'addImage'
-	initialize: ({ @notesCollection, @currentDesktop }) ->
+	initialize: ({ @notesCollection, @app }) ->
 	addText: ->
 		@notesCollection.create
 			type: 'text'
-			desktop_id: @currentDesktop.get('id')
+			desktop_id: @app.currentDesktop.get('id')
 	addImage: ->
 		@notesCollection.create
 			type: 'image'
-			desktop_id: @currentDesktop.get('id')
+			desktop_id: @app.currentDesktop.get('id')
 	render: ->
 		@$el.html @template()
 		@

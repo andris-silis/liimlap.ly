@@ -31,7 +31,7 @@ $ ->
 		).render()
 		createNote: new CreateNoteView(
 			notesCollection: app.collections.notes
-			currentDesktop: app.currentDesktop
+			app: app
 			el: '#add-note'
 		).render()
 
