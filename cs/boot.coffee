@@ -36,13 +36,18 @@ $ ->
 			).render()
 
 	app.addInitializer (options) ->
-		new Router(
+		desktopsController = new DesktopsController(
 			app: @
 			desktopSubset: @desktopSubset
 			desktopCollection: @collections.desktops
 			currentDesktopNotesCollection: @stateCollections.currentDesktopNotes
 			notesCollection: @collections.notes
 		)
+
+		new DesktopsRouter(
+			controller: desktopsController
+		)
+
 		Backbone.history.start()
 
 	app.start()

@@ -37,12 +37,16 @@ $(function() {
     };
   });
   app.addInitializer(function(options) {
-    new Router({
+    var desktopsController;
+    desktopsController = new DesktopsController({
       app: this,
       desktopSubset: this.desktopSubset,
       desktopCollection: this.collections.desktops,
       currentDesktopNotesCollection: this.stateCollections.currentDesktopNotes,
       notesCollection: this.collections.notes
+    });
+    new DesktopsRouter({
+      controller: desktopsController
     });
     return Backbone.history.start();
   });

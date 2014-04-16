@@ -1,8 +1,4 @@
-Router = Backbone.Router.extend
-	routes:
-		'': 'desktop',
-		'desktop/:id': 'desktop'
-
+DesktopsController = Marionette.Controller.extend
 	initialize: ({
 		@app
 		@desktopSubset
@@ -11,7 +7,7 @@ Router = Backbone.Router.extend
 		@currentDesktopNotesCollection
 	}) ->
 
-	desktop: (id) ->
+	changeDesktop: (id) ->
 		if not id
 			desktop = @desktopCollection.at 0
 		else
