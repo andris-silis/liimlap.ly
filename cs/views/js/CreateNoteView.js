@@ -8,18 +8,18 @@ CreateNoteView = Backbone.View.extend({
     'click .image': 'addImage'
   },
   initialize: function(_arg) {
-    this.notesCollection = _arg.notesCollection, this.currentDesktop = _arg.currentDesktop;
+    this.notesCollection = _arg.notesCollection, this.app = _arg.app;
   },
   addText: function() {
     return this.notesCollection.create({
       type: 'text',
-      desktop_id: this.currentDesktop.get('id')
+      desktop_id: this.app.currentDesktop.get('id')
     });
   },
   addImage: function() {
     return this.notesCollection.create({
       type: 'image',
-      desktop_id: this.currentDesktop.get('id')
+      desktop_id: this.app.currentDesktop.get('id')
     });
   },
   render: function() {

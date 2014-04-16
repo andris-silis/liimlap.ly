@@ -7,7 +7,7 @@ Router = Backbone.Router.extend({
     'desktop/:id': 'desktop'
   },
   initialize: function(_arg) {
-    this.desktopCollection = _arg.desktopCollection, this.notesCollection = _arg.notesCollection, this.currentDesktopNotesCollection = _arg.currentDesktopNotesCollection, this.currentDesktop = _arg.currentDesktop;
+    this.app = _arg.app, this.desktopSubset = _arg.desktopSubset, this.desktopCollection = _arg.desktopCollection, this.notesCollection = _arg.notesCollection, this.currentDesktopNotesCollection = _arg.currentDesktopNotesCollection;
   },
   desktop: function(id) {
     var desktop;
@@ -20,9 +20,10 @@ Router = Backbone.Router.extend({
     if (!desktop) {
       return;
     }
-    this.currentDesktop = desktop;
-    return this.currentDesktopNotesCollection.reset(this.notesCollection.where({
-      desktop_id: id
-    }));
+    this.app.currentDesktop = desktop;
+    this.desktopSubset.setFilter(function(note) {
+      return note.get('desktop_id') === id;
+    });
+    return this.desktopSubset.refresh();
   }
 });

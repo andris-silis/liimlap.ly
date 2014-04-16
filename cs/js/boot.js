@@ -4,13 +4,19 @@ $(function() {
   window.app = app = {};
   app.collections = {};
   app.views = {};
-  app.currentDesktop = new DesktopModel;
-  app.stateCollections = {
-    currentDesktopNotes: new NotesCollection
-  };
   app.collections = {
     desktops: new DesktopsCollection(data.desktops),
     notes: new NotesCollection(data.notes)
+  };
+  app.desktopSubset = new Backbone.CollectionSubset({
+    parent: app.collections.notes,
+    filter: function() {
+      return true;
+    }
+  });
+  app.currentDesktop = new DesktopModel;
+  app.stateCollections = {
+    currentDesktopNotes: app.desktopSubset.child
   };
   app.views = {
     desktop: new DesktopView({
@@ -24,15 +30,16 @@ $(function() {
     }).render(),
     createNote: new CreateNoteView({
       notesCollection: app.collections.notes,
-      currentDesktop: app.currentDesktop,
+      app: app,
       el: '#add-note'
     }).render()
   };
   router = new Router({
+    app: app,
+    desktopSubset: app.desktopSubset,
     desktopCollection: app.collections.desktops,
     currentDesktopNotesCollection: app.stateCollections.currentDesktopNotes,
-    notesCollection: app.collections.notes,
-    currentDesktop: app.currentDesktop
+    notesCollection: app.collections.notes
   });
   return Backbone.history.start();
 });
