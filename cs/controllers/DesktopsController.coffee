@@ -21,3 +21,6 @@ DesktopsController = Marionette.Controller.extend
 
 		@desktopSubset.setFilter (note) -> note.get('desktop_id') == id
 		@desktopSubset.refresh()
+
+		@app.vent.trigger 'change:desktop', desktop
+
