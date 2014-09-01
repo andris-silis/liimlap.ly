@@ -4,7 +4,13 @@
 	min-height: 150px;
 	position: absolute;
 	display: block;
-	border: 1px solid gray;
 	background: yellow;
 }
 
+.note textarea {
+	border: 0;
+	outline: 0;
+	box-shadow: none;
+	margin: 0;
+	background: none;
+}
