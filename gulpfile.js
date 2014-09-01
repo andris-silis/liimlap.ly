@@ -14,6 +14,7 @@ var js_vendor_src = [
     'bower_components/handlebars/handlebars.js',
     'bower_components/backbone/backbone.js',
     'bower_components/backbone.collectionsubset/backbone.collectionsubset.js',
+    'bower_components/backbone.localStorage/backbone.localStorage.js',
     'bower_components/marionette/lib/backbone.marionette.js'
 ];
 

@@ -5,8 +5,11 @@ $ ->
 		@collections = {}
 
 		@collections =
-			desktops: new DesktopsCollection data.desktops
-			notes: new NotesCollection data.notes
+			desktops: new DesktopsCollection
+			notes: new NotesCollection
+
+		@collections.desktops.fetch()
+		@collections.notes.fetch()
 
 		@desktopSubset = new Backbone.CollectionSubset(
 			parent: @collections.notes
