@@ -14,7 +14,6 @@ $ ->
 
 		@desktopSubset = new Backbone.CollectionSubset(
 			parent: @collections.notes
-			filter: -> true
 		)
 
 		@currentDesktop = new DesktopModel
