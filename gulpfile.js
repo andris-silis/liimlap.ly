@@ -9,6 +9,7 @@ var concat = require('gulp-concat');
 
 var js_vendor_src = [
     'bower_components/jquery/dist/jquery.js',
+    'bower_components/jquery-ui/jquery-ui.js',
     'bower_components/lodash/dist/lodash.underscore.js',
     'bower_components/handlebars/handlebars.js',
     'bower_components/backbone/backbone.js',
