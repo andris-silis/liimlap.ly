@@ -5,7 +5,7 @@ class DesktopView extends Backbone.Marionette.CollectionView
 
 
 	childViewOptions: ->
-		return {
+		{
 			app: @app
 		}
 
