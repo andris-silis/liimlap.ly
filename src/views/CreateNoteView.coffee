@@ -1,10 +1,15 @@
-class CreateNoteView extends Backbone.View
+class CreateNoteView extends Backbone.Marionette.View
 	template: Handlebars.compile($('#create-note-template').html())
 
 
+	ui:
+		createText: '.text'
+		createImage: '.image'
+
+
 	events:
-		'click .text': '_addText'
-		'click .image': '_addImage'
+		'click @ui.createText': '_addText'
+		'click @ui.createImage': '_addImage'
 
 
 	initialize: ({ @app }) ->
