@@ -3,7 +3,7 @@ class ApplicationLayoutView extends Backbone.Marionette.LayoutView
 
 
 	regions:
-		createNodeMenu: "#add-note",
+		createNoteMenu: "#add-note",
 		createDesktopMenu: "#add-desktop",
 		desktopsMenu: "#desktops-menu",
 		desktop: "#desktop"

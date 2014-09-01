@@ -54,7 +54,7 @@ $ ->
 			)
 		)
 
-		@layout.createNodeMenu.show(
+		@layout.createNoteMenu.show(
 			new CreateNoteView(app: @)
 		)
 
