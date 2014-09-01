@@ -3,8 +3,6 @@ class DesktopsController extends Marionette.Controller
 		@app
 		@desktopSubset
 		@desktopCollection
-		@notesCollection
-		@currentDesktopNotesCollection
 	}) ->
 
 
@@ -20,7 +18,8 @@ class DesktopsController extends Marionette.Controller
 
 		@app.currentDesktop = desktop
 
-		@desktopSubset.setFilter (note) -> note.get('desktop_id') == id
+		@desktopSubset.setFilter (note) ->
+			note.get('desktop_id') == id
 		@desktopSubset.refresh()
 
 		@app.vent.trigger 'change:desktop', desktop

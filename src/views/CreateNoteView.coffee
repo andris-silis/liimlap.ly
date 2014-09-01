@@ -7,7 +7,10 @@ class CreateNoteView extends Backbone.View
 		'click .image': '_addImage'
 
 
-	initialize: ({ @notesCollection, @app }) ->
+	initialize: ({
+		@notesCollection,
+		@app
+	}) ->
 
 
 	_addText: ->
