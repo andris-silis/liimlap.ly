@@ -11,18 +11,23 @@ class CreateNoteView extends Backbone.View
 		@notesCollection,
 		@app
 	}) ->
+		@listenTo @app.vent, 'change:desktop', @_onDesktopChanged
+
+
+	_onDesktopChanged: (desktop) ->
+		@currentDesktop = desktop
 
 
 	_addText: ->
 		@notesCollection.create
 			type: 'text'
-			desktop_id: @app.currentDesktop.get('id')
+			desktop_id: @currentDesktop.get('id')
 
 
 	_addImage: ->
 		@notesCollection.create
 			type: 'image'
-			desktop_id: @app.currentDesktop.get('id')
+			desktop_id: @currentDesktop.get('id')
 
 
 	render: ->
