@@ -3,6 +3,6 @@ ImageNoteView = Backbone.Marionette.ItemView.extend
 	attributes: ->
 		return {
 			class: 'image-note note'
-			# style: 'top:' + @model.get('top') + '; left:' + @model.get('left')
+			style: 'top:' + @model.get('top') + 'px; left:' + @model.get('left') + 'px'
 		}
 	template: Handlebars.compile($('#image-note-template').html())
