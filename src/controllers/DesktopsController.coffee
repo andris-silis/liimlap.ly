@@ -8,6 +8,16 @@ class DesktopsController extends Marionette.Controller
 
 
 	changeDesktop: (id) ->
+		desktop = @_getDesktopById id
+
+		@_filterDesktopSubset desktop.id
+
+		@app.vent.trigger 'change:desktop', desktop
+
+		@currentDesktop = desktop
+
+
+	_getDesktopById: (id) ->
 		if not id
 			desktop = @desktopsCollection.at 0
 		else
@@ -17,11 +27,7 @@ class DesktopsController extends Marionette.Controller
 		if not desktop
 			desktop = @desktopsCollection.createWithNextName()
 
-		@_filterDesktopSubset(desktop.id)
-
-		@app.vent.trigger 'change:desktop', desktop
-
-		@currentDesktop = desktop
+		desktop
 
 
 	_filterDesktopSubset: (desktop_id) ->
