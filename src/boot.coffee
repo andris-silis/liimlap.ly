@@ -21,6 +21,13 @@ $ ->
 
 
 	app.addInitializer (options) ->
+		notesController = new NotesController(
+			app: @
+			notesCollection: @collections.notes
+		)
+
+
+	app.addInitializer (options) ->
 		desktopsController = new DesktopsController(
 			app: @
 			desktopSubset: @desktopSubset

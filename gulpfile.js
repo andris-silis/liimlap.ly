@@ -38,6 +38,7 @@ var coffee_src = [
 
 
         './src/controllers/DesktopsController.coffee',
+        './src/controllers/NotesController.coffee',
         './src/ApplicationLayout.coffee',
         './src/DesktopsRouter.coffee',
 
