@@ -36,8 +36,6 @@ $ ->
 			controller: desktopsController
 		)
 
-		Backbone.history.start()
-
 
 	app.addInitializer (options) ->
 		@layout = new ApplicationLayout(
@@ -67,6 +65,11 @@ $ ->
 				collection: @stateCollections.currentDesktopNotes
 			)
 		)
+
+
+	app.on 'start', (options) ->
+		if Backbone.history
+			Backbone.history.start()
 
 
 	app.start()
