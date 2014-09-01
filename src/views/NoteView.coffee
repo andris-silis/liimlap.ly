@@ -7,4 +7,4 @@ class NoteView extends Backbone.Marionette.ItemView
 		}
 	template: Handlebars.compile($('#image-note-template').html())
 	onShow: ->
-		console.log 'onShow'
+		@$el.draggable()
