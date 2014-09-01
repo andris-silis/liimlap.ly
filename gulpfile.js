@@ -35,6 +35,7 @@ var coffee_src = [
         './src/views/DesktopsMenuItemView.coffee',
         './src/views/DesktopsMenuView.coffee',
         './src/views/CreateNoteView.coffee',
+        './src/views/CreateDesktopView.coffee',
 
 
         './src/controllers/DesktopsController.coffee',

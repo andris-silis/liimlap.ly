@@ -58,6 +58,10 @@ $ ->
 			new CreateNoteView(app: @)
 		)
 
+		@layout.createDesktopMenu.show(
+			new CreateDesktopView(app: @)
+		)
+
 		@layout.desktop.show(
 			new DesktopView(
 				app: @
