@@ -39,7 +39,7 @@ var coffee_src = [
 
         './src/controllers/DesktopsController.coffee',
         './src/controllers/NotesController.coffee',
-        './src/ApplicationLayout.coffee',
+        './src/views/ApplicationLayoutView.coffee',
         './src/DesktopsRouter.coffee',
 
         './src/boot.coffee'

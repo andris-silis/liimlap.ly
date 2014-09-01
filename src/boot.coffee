@@ -40,7 +40,7 @@ $ ->
 
 
 	app.addInitializer (options) ->
-		@layout = new ApplicationLayout(
+		@layout = new ApplicationLayoutView(
 			el: 'body'
 		)
 		@layout.render()
