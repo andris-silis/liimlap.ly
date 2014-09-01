@@ -30,6 +30,7 @@ var coffee_src = [
         './src/collections/TextNotesCollection.coffee',
         './src/collections/ImageNotesCollection.coffee',
 
+        './src/views/NoteView.coffee',
         './src/views/TextNoteView.coffee',
         './src/views/ImageNoteView.coffee',
         './src/views/DesktopView.coffee',

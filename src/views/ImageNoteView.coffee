@@ -1,8 +1,7 @@
-ImageNoteView = Backbone.Marionette.ItemView.extend
-	tagName: 'li'
+class ImageNoteView extends NoteView
 	attributes: ->
-		return {
+		return _({
 			class: 'image-note note'
-			style: 'top:' + @model.get('top') + 'px; left:' + @model.get('left') + 'px'
-		}
+		}).defaults super
+
 	template: Handlebars.compile($('#image-note-template').html())

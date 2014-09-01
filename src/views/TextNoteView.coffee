@@ -1,8 +1,7 @@
-TextNoteView = Backbone.Marionette.ItemView.extend
-	tagName: 'li'
+class TextNoteView extends NoteView
 	attributes: ->
-		return {
+		return _({
 			class: 'text-note note'
-			style: 'top:' + @model.get('top') + 'px; left:' + @model.get('left') + 'px'
-		}
+		}).defaults super
+
 	template: Handlebars.compile($('#text-note-template').html())
