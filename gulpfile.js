@@ -22,13 +22,9 @@ var coffee_src = [
 	// './src/**/*.coffee'
         './src/models/DesktopModel.coffee',
         './src/models/NoteModel.coffee',
-        './src/models/TextNoteModel.coffee',
-        './src/models/ImageNoteModel.coffee',
 
         './src/collections/DesktopsCollection.coffee',
         './src/collections/NotesCollection.coffee',
-        './src/collections/TextNotesCollection.coffee',
-        './src/collections/ImageNotesCollection.coffee',
 
         './src/views/NoteView.coffee',
         './src/views/TextNoteView.coffee',
