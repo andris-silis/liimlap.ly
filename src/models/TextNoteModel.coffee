@@ -1,2 +1,2 @@
-TextNoteModel = NoteModel.extend
+class TextNoteModel extends NoteModel
   	initialize: ->

@@ -1,4 +1,4 @@
-NoteView = Backbone.Marionette.ItemView.extend
+class NoteView extends Backbone.Marionette.ItemView
 	tagName: 'li'
 	attributes: ->
 		return {

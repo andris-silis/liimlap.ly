@@ -1,3 +1,3 @@
-TextNotesCollection = NotesCollection.extend
+class TextNotesCollection extends NotesCollection
 	model: TextNoteModel
 	initialize: ->

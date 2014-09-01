@@ -1,4 +1,4 @@
-DesktopsRouter = Backbone.Marionette.AppRouter.extend
+class DesktopsRouter extends Backbone.Marionette.AppRouter
 	appRoutes:
 		'': 'changeDesktop',
 		'desktop/:id': 'changeDesktop'

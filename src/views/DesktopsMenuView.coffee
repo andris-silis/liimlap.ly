@@ -1,4 +1,4 @@
-DesktopsMenuView = Backbone.Marionette.CollectionView.extend
+class DesktopsMenuView extends Backbone.Marionette.CollectionView
 	tagName: 'ul'
 
 

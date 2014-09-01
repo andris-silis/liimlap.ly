@@ -1,1 +1,1 @@
-DesktopModel = Backbone.Model.extend {}
+class DesktopModel extends Backbone.Model

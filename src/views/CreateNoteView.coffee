@@ -1,4 +1,4 @@
-CreateNoteView = Backbone.View.extend
+class CreateNoteView extends Backbone.View
 	template: Handlebars.compile($('#create-note-template').html())
 	events:
 		'click .text': 'addText'

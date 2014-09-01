@@ -1,4 +1,4 @@
-DesktopsController = Marionette.Controller.extend
+class DesktopsController extends Marionette.Controller
 	initialize: ({
 		@app
 		@desktopSubset

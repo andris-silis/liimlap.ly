@@ -1,4 +1,4 @@
-DesktopsMenuItemView = Backbone.Marionette.ItemView.extend
+class DesktopsMenuItemView extends Backbone.Marionette.ItemView
 	tagName: 'li'
 	attributes: ->
 		if @model == @options.currentDesktop

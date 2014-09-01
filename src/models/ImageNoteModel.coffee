@@ -1,2 +1,2 @@
-ImageNoteModel = NoteModel.extend
+class ImageNoteModel extends NoteModel
   	initialize: ->
