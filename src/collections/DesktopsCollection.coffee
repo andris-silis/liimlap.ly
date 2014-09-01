@@ -6,7 +6,6 @@ class DesktopsCollection extends Backbone.Collection
 
 
 	createWithNextName: ->
-		console.log 'createWithNextName'
 		number = @size() + 1
 		title = "Desktop #{number}"
-		@create(title: title)
+		@create(id: number, title: title)
