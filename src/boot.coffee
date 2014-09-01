@@ -1,6 +1,7 @@
 $ ->
 	window.app = app = new Backbone.Marionette.Application()
 
+
 	app.addInitializer (options) ->
 		@collections = {}
 
@@ -21,6 +22,7 @@ $ ->
 		@stateCollections =
 			currentDesktopNotes: @desktopSubset.child
 
+
 	app.addInitializer (options) ->
 		desktopsController = new DesktopsController(
 			app: @
@@ -36,11 +38,13 @@ $ ->
 
 		Backbone.history.start()
 
+
 	app.addInitializer (options) ->
 		@layout = new ApplicationLayout(
 			el: 'body'
 		)
 		@layout.render()
+
 
 	app.addInitializer (options) ->
 		@layout.desktopsMenu.show(
@@ -63,6 +67,7 @@ $ ->
 				collection: @stateCollections.currentDesktopNotes
 			)
 		)
+
 
 	app.addInitializer ->
 		@vent.on 'change:desktop', (desktop) ->

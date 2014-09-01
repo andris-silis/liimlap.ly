@@ -7,6 +7,7 @@ class DesktopsController extends Marionette.Controller
 		@currentDesktopNotesCollection
 	}) ->
 
+
 	changeDesktop: (id) ->
 		if not id
 			desktop = @desktopCollection.at 0

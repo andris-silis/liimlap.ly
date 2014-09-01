@@ -4,4 +4,5 @@ class TextNoteView extends NoteView
 			class: 'text-note note'
 		}).defaults super
 
+
 	template: Handlebars.compile($('#text-note-template').html())

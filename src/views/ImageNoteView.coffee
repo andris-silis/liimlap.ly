@@ -4,4 +4,5 @@ class ImageNoteView extends NoteView
 			class: 'image-note note'
 		}).defaults super
 
+
 	template: Handlebars.compile($('#image-note-template').html())
