@@ -16,11 +16,11 @@ class CreateNoteView extends Backbone.Marionette.View
 
 
 	_addText: ->
-		@app.vent.trigger 'create:note', type: 'text'
+		@app.vent.trigger 'create:note', 'text'
 
 
 	_addImage: ->
-		@app.vent.trigger 'create:note', type: 'image'
+		@app.vent.trigger 'create:note', 'image'
 
 
 	render: ->
