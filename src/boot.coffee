@@ -55,10 +55,7 @@ $ ->
 		)
 
 		@layout.createNodeMenu.show(
-			new CreateNoteView(
-				notesCollection: @collections.notes
-				app: @
-			)
+			new CreateNoteView(app: @)
 		)
 
 		@layout.desktop.show(
