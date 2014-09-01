@@ -11,11 +11,9 @@ class CreateDesktopView extends Backbone.Marionette.View
 
 
 	initialize: ({ @app }) ->
-		console.log 'CreateDesktopView'
 
 
 	_addDesktop: ->
-		console.log '_addDesktop'
 		@app.vent.trigger 'create:desktop'
 
 
