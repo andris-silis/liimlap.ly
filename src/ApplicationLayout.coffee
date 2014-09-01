@@ -1,4 +1,4 @@
-ApplicationLayout = Backbone.Marionette.Layout.extend
+ApplicationLayout = Backbone.Marionette.LayoutView.extend
 	template: "#application-layout-template",
 
 	regions:

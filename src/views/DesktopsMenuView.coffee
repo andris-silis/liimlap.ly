@@ -8,10 +8,10 @@ DesktopsMenuView = Backbone.Marionette.CollectionView.extend
 		'class': 'side-nav'
 
 
-	itemView: DesktopsMenuItemView
+	childView: DesktopsMenuItemView
 
 
-	itemViewOptions: ->
+	childViewOptions: ->
 		currentDesktop: @currentDesktop
 
 
