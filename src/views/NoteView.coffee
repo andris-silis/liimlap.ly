@@ -16,15 +16,15 @@ class NoteView extends Backbone.Marionette.ItemView
 	template: Handlebars.compile($('#image-note-template').html())
 
 
+	initialize: ({ @app }) ->
+
+
 	onShow: ->
 		@$el.draggable()
 
 
 	_onDragStop: (event, ui) ->
-		@_savePosition ui.position.top, ui.position.left
-
-
-	_savePosition: (top, left) ->
-		@model.save
-			top: top
-			left: left
+		@app.vent.trigger 'change:note-position',
+			@model,
+			ui.position.top,
+			ui.position.left

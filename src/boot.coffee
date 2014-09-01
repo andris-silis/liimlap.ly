@@ -63,6 +63,7 @@ $ ->
 
 		@layout.desktop.show(
 			new DesktopView(
+				app: @
 				collection: @stateCollections.currentDesktopNotes
 			)
 		)

@@ -1,6 +1,14 @@
 class DesktopView extends Backbone.Marionette.CollectionView
 	tagName: 'ul'
 
+	initialize: ({ @collection, @app }) ->
+
+
+	childViewOptions: ->
+		return {
+			app: @app
+		}
+
 
 	getChildView: (item) ->
 		if item.get('type') == 'image'
