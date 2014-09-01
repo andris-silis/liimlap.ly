@@ -32,4 +32,4 @@ class DesktopsController extends Marionette.Controller
 
 	_onCreateDesktop: ->
 		console.log '_onCreateDesktop'
-		@desktopsCollection.create()
+		@desktopsCollection.createWithNextName()
