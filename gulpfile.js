@@ -40,7 +40,6 @@ var coffee_src = [
         './src/ApplicationLayout.coffee',
         './src/DesktopsRouter.coffee',
 
-        './src/data.coffee',
         './src/boot.coffee'
 ];
 
