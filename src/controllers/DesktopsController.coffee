@@ -17,7 +17,7 @@ class DesktopsController extends Marionette.Controller
 		if not desktop
 			desktop = @desktopsCollection.createWithNextName()
 
-		@_filterDesktopSubset(id)
+		@_filterDesktopSubset(desktop.id)
 
 		@app.vent.trigger 'change:desktop', desktop
 
