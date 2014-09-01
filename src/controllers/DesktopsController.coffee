@@ -15,7 +15,7 @@ class DesktopsController extends Marionette.Controller
 			desktop = @desktopsCollection.get id
 
 		if not desktop
-			return
+			desktop = @desktopsCollection.createWithNextName()
 
 		@_filterDesktopSubset(id)
 
