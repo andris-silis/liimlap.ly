@@ -69,16 +69,4 @@ $ ->
 		)
 
 
-	app.addInitializer ->
-		@vent.on 'change:desktop', (desktop) ->
-			console.debug 'change desktop', desktop
-
-		@desktopsRouter.on 'all', ->
-			console.debug 'all'
-
-		@desktopsRouter.on 'route', ->
-			console.debug 'route'
-
-
-
 	app.start()
