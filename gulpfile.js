@@ -4,11 +4,11 @@ var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('coffee', function () {
-	gulp.src('./cs/**/*.coffee')
+	gulp.src('./src/**/*.coffee')
 		.pipe(sourcemaps.init())
 		.pipe(coffee({ bare: true })).on('error', gutil.log)
 		.pipe(sourcemaps.write('./maps'))
-		.pipe(gulp.dest('./dest/js'));
+		.pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('default', function () {
