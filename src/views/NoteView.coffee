@@ -4,7 +4,7 @@ class NoteView extends Backbone.Marionette.ItemView
 
 	events:
 		'dragstop': '_onDragStop'
-
+		'dblclick': '_onDoubleClick'
 
 	attributes: ->
 		{
