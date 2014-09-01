@@ -1,4 +1,4 @@
 class NoteModel extends Backbone.Model
 	defaults:
-		top: 0
+		top: 14
 		left: 0
