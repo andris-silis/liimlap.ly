@@ -16,9 +16,14 @@ class DesktopsController extends Marionette.Controller
 		if not desktop
 			return
 
-		@desktopSubset.setFilter (note) ->
-			note.get('desktop_id') == id
-		@desktopSubset.refresh()
+		@_filterDesktopSubset(id)
 
 		@app.vent.trigger 'change:desktop', desktop
 
+		@currentDesktop = desktop
+
+
+	_filterDesktopSubset: (desktop_id) ->
+		@desktopSubset.setFilter (note) ->
+			note.get('desktop_id') == desktop_id
+		@desktopSubset.refresh()
