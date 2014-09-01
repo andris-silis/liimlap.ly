@@ -27,8 +27,6 @@ $ ->
 			app: @
 			desktopSubset: @desktopSubset
 			desktopCollection: @collections.desktops
-			currentDesktopNotesCollection: @stateCollections.currentDesktopNotes
-			notesCollection: @collections.notes
 		)
 
 		@desktopsRouter = new DesktopsRouter(
