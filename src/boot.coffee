@@ -16,8 +16,6 @@ $ ->
 			parent: @collections.notes
 		)
 
-		@currentDesktop = new DesktopModel
-
 		@stateCollections =
 			currentDesktopNotes: @desktopSubset.child
 
@@ -45,7 +43,6 @@ $ ->
 		@layout.desktopsMenu.show(
 			new DesktopsMenuView(
 				collection: @collections.desktops
-				currentDesktop: @currentDesktop
 				app: @
 			)
 		)
