@@ -24,7 +24,7 @@ $ ->
 		desktopsController = new DesktopsController(
 			app: @
 			desktopSubset: @desktopSubset
-			desktopCollection: @collections.desktops
+			desktopsCollection: @collections.desktops
 		)
 
 		@desktopsRouter = new DesktopsRouter(

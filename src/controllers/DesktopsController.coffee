@@ -2,16 +2,16 @@ class DesktopsController extends Marionette.Controller
 	initialize: ({
 		@app
 		@desktopSubset
-		@desktopCollection
+		@desktopsCollection
 	}) ->
 
 
 	changeDesktop: (id) ->
 		if not id
-			desktop = @desktopCollection.at 0
+			desktop = @desktopsCollection.at 0
 		else
 			id = parseInt id, 10
-			desktop = @desktopCollection.get id
+			desktop = @desktopsCollection.get id
 
 		if not desktop
 			return
