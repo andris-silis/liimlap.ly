@@ -3,6 +3,15 @@ class TextNoteView extends NoteView
 		_(class: 'text-note note').defaults super
 
 
+	ui: {
+		editor: 'div'
+	}
+
+
+	events: ->
+		_({ 'blur @ui.editor': '_onBlur' }).defaults super
+
+
 	template: Handlebars.compile($('#text-note-template').html())
 
 
@@ -11,11 +20,15 @@ class TextNoteView extends NoteView
 
 
 	_makeEditable: ->
-		$textarea = $ '<textarea>'
-		@$el.append $textarea
-		@_adjustEditableElementSizes(@$el, $textarea)
+		@ui.editor
+			.prop('contenteditable', true)
+			.focus()
 
 
-	_adjustEditableElementSizes: ($el, $textarea) ->
-		$textarea.outerWidth @$el.innerWidth()
-		$textarea.outerHeight @$el.innerHeight()
+	_onBlur: ->
+		@ui.editor.prop('contenteditable', false)
+
+		text = @ui.editor.html()
+		text = text.trim()
+
+		@app.vent.trigger 'change:note-text', @model, text

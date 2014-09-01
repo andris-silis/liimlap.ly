@@ -3,14 +3,12 @@
 	min-width: 150px;
 	min-height: 150px;
 	position: absolute;
-	display: block;
 	background: yellow;
+	display: block;
 }
 
-.note textarea {
-	border: 0;
-	outline: 0;
-	box-shadow: none;
-	margin: 0;
-	background: none;
+.note div {
+	display: inline-block;
+	outline: none;
 }
+

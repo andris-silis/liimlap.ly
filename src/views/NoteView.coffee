@@ -2,9 +2,12 @@ class NoteView extends Backbone.Marionette.ItemView
 	tagName: 'li'
 
 
-	events:
-		'dragstop': '_onDragStop'
-		'dblclick': '_onDoubleClick'
+	events: ->
+		{
+			'dragstop': '_onDragStop'
+			'dblclick': '_onDoubleClick'
+		}
+
 
 	attributes: ->
 		{
@@ -17,6 +20,7 @@ class NoteView extends Backbone.Marionette.ItemView
 
 
 	initialize: ({ @app }) ->
+		@listenTo @model, 'change', @render
 
 
 	onShow: ->
