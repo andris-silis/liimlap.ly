@@ -2,14 +2,71 @@ var gulp = require('gulp');
 var coffee = require('gulp-coffee');
 var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
+// var watch = require('gulp-watch');
+var plumber = require('gulp-plumber');
+var concat = require('gulp-concat');
 
-gulp.task('coffee', function () {
-	gulp.src('./src/**/*.coffee')
+
+var coffee_src = [
+	// './src/**/*.coffee'
+        './src/models/DesktopModel.coffee',
+        './src/models/NoteModel.coffee',
+        './src/models/TextNoteModel.coffee',
+        './src/models/ImageNoteModel.coffee',
+
+        './src/collections/DesktopsCollection.coffee',
+        './src/collections/NotesCollection.coffee',
+        './src/collections/TextNotesCollection.coffee',
+        './src/collections/ImageNotesCollection.coffee',
+
+        './src/views/TextNoteView.coffee',
+        './src/views/ImageNoteView.coffee',
+        './src/views/DesktopView.coffee',
+
+        './src/views/DesktopsMenuItemView.coffee',
+        './src/views/DesktopsMenuView.coffee',
+        './src/views/CreateNoteView.coffee',
+
+
+        './src/controllers/DesktopsController.coffee',
+        './src/ApplicationLayout.coffee',
+        './src/DesktopsRouter.coffee',
+
+        './src/data.coffee',
+        './src/boot.coffee'
+];
+
+
+gulp.task('coffee-compile', function () {
+	gulp.src(coffee_src)
 		.pipe(sourcemaps.init())
-		.pipe(coffee({ bare: true })).on('error', gutil.log)
-		.pipe(sourcemaps.write('./maps'))
+		.pipe(coffee({ bare: true }))
+		.on('error', gutil.log)
+		.pipe(concat('app.js'))
+		.pipe(sourcemaps.write(
+				'./maps',
+				{ sourceRoot: '../../src' }
+			)
+		)
 		.pipe(gulp.dest('./dist/js'));
 });
+
+
+gulp.task('watch', function () {
+	gulp.watch(coffee_src, ['coffee-compile']);
+});
+
+// gulp.task('watch', function () {
+// 	gulp.src(coffee_src, { read: false })
+// 		.pipe(watch())
+// 		.pipe(plumber())
+// 		.pipe(sourcemaps.init())
+// 		.pipe(coffee({ bare: true }))
+// 		.on('error', gutil.log)
+// 		.pipe(sourcemaps.write('./maps'))
+// 		.pipe(gulp.dest('./dist/js'))
+// });
+
 
 gulp.task('default', function () {
 });
