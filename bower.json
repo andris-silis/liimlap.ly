@@ -20,7 +20,8 @@
     "backbone.collectionsubset": "https://github.com/anthonyshort/backbone.collectionsubset.git#~0.1.3",
     "normalize.css": "~3.0.1",
     "foundation": "~5.2.2",
-    "jquery-ui": "~1.11.1"
+    "jquery-ui": "~1.11.1",
+    "backbone.localStorage": "~1.1.13"
   },
   "resolutions": {
     "backbone": "1.0.0 - 1.1.2"
