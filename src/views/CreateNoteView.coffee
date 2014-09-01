@@ -3,20 +3,20 @@ class CreateNoteView extends Backbone.View
 
 
 	events:
-		'click .text': 'addText'
-		'click .image': 'addImage'
+		'click .text': '_addText'
+		'click .image': '_addImage'
 
 
 	initialize: ({ @notesCollection, @app }) ->
 
 
-	addText: ->
+	_addText: ->
 		@notesCollection.create
 			type: 'text'
 			desktop_id: @app.currentDesktop.get('id')
 
 
-	addImage: ->
+	_addImage: ->
 		@notesCollection.create
 			type: 'image'
 			desktop_id: @app.currentDesktop.get('id')

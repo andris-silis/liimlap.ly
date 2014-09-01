@@ -20,10 +20,10 @@ class DesktopsMenuView extends Backbone.Marionette.CollectionView
 		@currentDesktop
 		@collection
 	}) ->
-		@listenTo @app.vent, 'change:desktop', @desktopChanged
+		@listenTo @app.vent, 'change:desktop', @_desktopChanged
 
 
-	desktopChanged: (desktop) ->
+	_desktopChanged: (desktop) ->
 		@currentDesktop = desktop
 		@render()
 
