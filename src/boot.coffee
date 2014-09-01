@@ -27,7 +27,7 @@ $ ->
 			notesCollection: @collections.notes
 		)
 
-		new DesktopsRouter(
+		@desktopsRouter = new DesktopsRouter(
 			controller: desktopsController
 		)
 
@@ -44,6 +44,7 @@ $ ->
 			new DesktopsMenuView(
 				collection: @collections.desktops
 				currentDesktop: @currentDesktop
+				app: @
 			)
 		)
 
@@ -59,6 +60,17 @@ $ ->
 				collection: @stateCollections.currentDesktopNotes
 			)
 		)
+
+	app.addInitializer ->
+		@vent.on 'change:desktop', (desktop) ->
+			console.debug 'change desktop', desktop
+
+		@desktopsRouter.on 'all', ->
+			console.debug 'all'
+
+		@desktopsRouter.on 'route', ->
+			console.debug 'route'
+
 
 
 	app.start()
