@@ -7,6 +7,16 @@ var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 
 
+var js_vendor_src = [
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/lodash/dist/lodash.underscore.js',
+    'bower_components/handlebars/handlebars.js',
+    'bower_components/backbone/backbone.js',
+    'bower_components/backbone.collectionsubset/backbone.collectionsubset.js',
+    'bower_components/marionette/lib/backbone.marionette.js'
+];
+
+
 var coffee_src = [
 	// './src/**/*.coffee'
         './src/models/DesktopModel.coffee',
@@ -35,6 +45,20 @@ var coffee_src = [
         './src/data.coffee',
         './src/boot.coffee'
 ];
+
+
+gulp.task('vendor-concat', function () {
+	gulp.src(js_vendor_src)
+		.pipe(sourcemaps.init())
+		.on('error', gutil.log)
+		.pipe(concat('vendors.js'))
+		.pipe(sourcemaps.write(
+				'./maps',
+				{ sourceRoot: '../../bower_components' }
+			)
+		)
+		.pipe(gulp.dest('./dist/js'));
+});
 
 
 gulp.task('coffee-compile', function () {
