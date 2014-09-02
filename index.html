@@ -10,22 +10,20 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
         <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
-        <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+        <link rel="stylesheet" href="bower_components/gridism/gridism.css">
         <link rel="stylesheet" href="css/main.css">
         <!-- <script src="js/vendor/modernizr-2.7.1.min.js"></script> -->
     </head>
     <body>
         <script id="application-layout-template" type="text/x-handlebars-template">
-            <div class="row">
-                <div class="small-12 medium-2 columns">
+            <div class="grid no-gutters">
+                <div id="menu" class="unit one-fifth">
                     <div id="add-note"></div>
 
                     <div id="add-desktop"></div>
                     <div id="desktops-menu"></div>
                 </div>
-                <div class="small-12 medium-10 columns">
-                    <div id="desktop"></div>
-                </div>
+                <div id="desktop" class="desktop unit four-fifths"></div>
             </div>
         </script>
 

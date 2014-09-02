@@ -18,16 +18,16 @@
     "handlebars": "~1.3.0",
     "backbone.collectionsubset": "https://github.com/anthonyshort/backbone.collectionsubset.git#~0.1.3",
     "normalize.css": "~3.0.1",
-    "foundation": "~5.2.2",
     "jquery-ui": "~1.11.1",
-    "backbone.localStorage": "~1.1.13"
+    "backbone.localStorage": "~1.1.13",
+    "gridism": "~0.2.1"
   },
   "resolutions": {
     "backbone": "1.0.0 - 1.1.2"
   },
   "overrides": {
     "modernizr": {
-        "main": "modernizr.js"
+      "main": "modernizr.js"
     }
   }
 }
