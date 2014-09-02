@@ -1,6 +1,6 @@
 class TextNoteView extends NoteView
 	attributes: ->
-		_(class: 'text-note note').defaults super
+		_(class: 'note note-theme text').defaults super
 
 
 	ui: {

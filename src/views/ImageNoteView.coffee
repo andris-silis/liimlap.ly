@@ -1,6 +1,6 @@
 class ImageNoteView extends NoteView
 	attributes: ->
-		_(class: 'image-note note').defaults super
+		_(class: 'note note-theme image').defaults super
 
 
 	template: Handlebars.compile($('#image-note-template').html())

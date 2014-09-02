@@ -16,7 +16,6 @@ body {
 	min-width: 150px;
 	min-height: 150px;
 	position: absolute;
-	background: yellow;
 	display: block;
 	-webkit-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.75);
 	-moz-box-shadow:    2px 2px 4px 0px rgba(50, 50, 50, 0.75);
@@ -86,5 +85,38 @@ body {
 .plus button:hover {
 	background: #313439;
 }
+
+
+.add-note {
+	margin-top: 3em;
+}
+
+.add-note button {
+	display: inline-block;
+	height:	76px;
+	width: 76px;
+	font-size: 1.8em;
+	margin: 0 1%;
+	color: rgba(0, 0, 0, 0.3);
+}
+
+
+.note-theme {
+	border: none;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.note-theme.text {
+	background: #FD8E07;
+}
+
+.note-theme.image {
+	background: #71459A;
+}
+
+
+
+
+
 
 
