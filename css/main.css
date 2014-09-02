@@ -67,4 +67,24 @@ body {
 }
 
 
+.plus {
+	border-top: 1px solid #313439;
+}
+
+.plus button {
+	font-size: 3em;
+	background: transparent;
+	border: none;
+	color: #999999;
+	width:	100%;
+}
+
+.plus button:focus {
+	outline: 1px solid #313439;
+}
+
+.plus button:hover {
+	background: #313439;
+}
+
 
