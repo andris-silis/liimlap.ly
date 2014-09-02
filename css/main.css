@@ -12,6 +12,11 @@ body {
 }
 
 
+.desktop {
+	position: relative;
+}
+
+
 .note {
 	min-width: 200px;
 	min-height: 200px;
