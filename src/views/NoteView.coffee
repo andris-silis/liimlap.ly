@@ -24,7 +24,9 @@ class NoteView extends Backbone.Marionette.ItemView
 
 
 	onShow: ->
-		@$el.draggable()
+		@$el.draggable(
+			containment: $('#desktop')
+		)
 
 
 	_onDragStop: (event, ui) ->
