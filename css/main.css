@@ -1,3 +1,16 @@
+html,
+body {
+	height:	100%;
+	background: #F4F4F4;
+}
+
+.grid,
+#desktop,
+#desktop ul,
+#menu {
+	height:100%
+}
+
 
 .note {
 	min-width: 150px;
@@ -14,4 +27,44 @@
 	display: inline-block;
 	outline: none;
 }
+
+
+#menu {
+	background: #1D2027;
+}
+
+#menu ul {
+	list-style: none;
+	padding:	0;
+	margin: 0;
+}
+
+#menu a {
+	display: block;
+	padding: 20px 10% 20px 10%;
+	text-decoration: none;
+	color: #999999;
+}
+
+#menu a:hover {
+	background: #313439;
+}
+
+#menu .active a {
+	background: #515459;
+	color: #DDDDDD;
+}
+
+#menu a:before {
+	content: ' ';
+	border: 1px solid #999999;
+	display: inline-block;
+	height: 16px;
+	width: 30px;
+	position: relative;
+	top: 3px;
+	margin-right: 8%;
+}
+
+
 
