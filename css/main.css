@@ -34,6 +34,43 @@ body {
 }
 
 
+/* Folded corner */
+.note-theme.text:after {
+   border-color: #FD8E07;
+}
+
+.note-theme.image:after {
+   border-color: #71459A;
+}
+
+.note-theme.text:before {
+   border-color: #703f03 transparent;
+}
+
+.note-theme.image:before {
+   border-color: #321f44 transparent;
+}
+
+.note:after {
+   content: "";
+   position: absolute;
+   bottom: -2em;
+   left: 0;
+   right: 2em;
+   border-width: 1em;
+   border-style: solid;
+}
+
+.note:before {
+   content: "";
+   position: absolute;
+   bottom: -2em;
+   right: 0;
+   border-width: 2em 2em 0 0;
+   border-style: solid;
+}
+
+
 .menu {
 	background: #1D2027;
 }
