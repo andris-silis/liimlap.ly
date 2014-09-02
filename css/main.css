@@ -5,9 +5,9 @@ body {
 }
 
 .grid,
-#desktop,
-#desktop ul,
-#menu {
+.desktop,
+.desktop ul,
+.menu {
 	height:100%
 }
 
@@ -29,33 +29,33 @@ body {
 }
 
 
-#menu {
+.menu {
 	background: #1D2027;
 }
 
-#menu ul {
+.menu ul {
 	list-style: none;
 	padding:	0;
 	margin: 0;
 }
 
-#menu a {
+.menu a {
 	display: block;
 	padding: 20px 10% 20px 10%;
 	text-decoration: none;
 	color: #999999;
 }
 
-#menu a:hover {
+.menu a:hover {
 	background: #313439;
 }
 
-#menu .active a {
+.menu .active a {
 	background: #515459;
 	color: #DDDDDD;
 }
 
-#menu a:before {
+.menu a:before {
 	content: ' ';
 	border: 1px solid #999999;
 	display: inline-block;
