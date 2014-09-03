@@ -47,7 +47,7 @@ var coffeeSrc = [
 ];
 
 
-gulp.task('vendor-concat', function () {
+gulp.task('concat-vendor', function () {
 	gulp.src(jsVendorSrc)
 		.pipe(sourcemaps.init())
 		.on('error', gutil.log)
