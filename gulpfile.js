@@ -20,6 +20,12 @@ var jsVendorSrc = [
 ];
 
 
+var cssVendorSrc = [
+    'bower_components/normalize.css/normalize.css',
+    'bower_components/gridism/gridism.css',
+];
+
+
 var coffeeSrc = [
 	// './src/**/*.coffee'
         './src/models/DesktopModel.coffee',
@@ -54,17 +60,25 @@ var sassSrc = [
 ];
 
 
-gulp.task('concat-vendor', function () {
-	gulp.src(jsVendorSrc)
-		.pipe(sourcemaps.init())
+gulp.task('concat-vendor-js', function () {
+    gulp.src(jsVendorSrc)
+        .pipe(sourcemaps.init())
+        .on('error', gutil.log)
+        .pipe(concat('vendors.js'))
+        .pipe(sourcemaps.write(
+                './maps',
+                { sourceRoot: '../../bower_components' }
+            )
+        )
+        .pipe(gulp.dest('./dist/js'));
+});
+
+
+gulp.task('concat-vendor-css', function () {
+	gulp.src(cssVendorSrc)
 		.on('error', gutil.log)
-		.pipe(concat('vendors.js'))
-		.pipe(sourcemaps.write(
-				'./maps',
-				{ sourceRoot: '../../bower_components' }
-			)
-		)
-		.pipe(gulp.dest('./dist/js'));
+		.pipe(concat('vendors.css'))
+		.pipe(gulp.dest('./dist/css'));
 });
 
 
@@ -86,14 +100,21 @@ gulp.task('compile-coffee', function () {
 gulp.task('compile-sass', function () {
     gulp.src(sassSrc)
         .pipe(sass())
+        .pipe(concat('app.css'))
         .pipe(gulp.dest('./dist/css'));
 });
 
 
 gulp.task('watch', function () {
     gulp.watch(coffeeSrc, ['compile-coffee']);
-	gulp.watch(sassSrc, ['compile-sass']);
+    gulp.watch(sassSrc, ['compile-sass']);
 });
+
+
+gulp.task('build', ['compile-sass', 'compile-coffee', 'concat-vendor-css', 'concat-vendor-js'], function () {
+
+});
+
 
 // gulp.task('watch', function () {
 // 	gulp.src(coffee_src, { read: false })
