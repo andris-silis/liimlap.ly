@@ -1,5 +1,5 @@
 class CreateDesktopView extends Backbone.Marionette.View
-	template: Handlebars.compile($('#create-desktop-template').html())
+	template: App.templates['create-desktop']
 
 
 	ui:

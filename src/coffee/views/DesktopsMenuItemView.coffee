@@ -1,4 +1,7 @@
 class DesktopsMenuItemView extends Backbone.Marionette.ItemView
+	template: App.templates['desktop-menu-item']
+
+
 	tagName: 'li'
 
 
@@ -7,4 +10,3 @@ class DesktopsMenuItemView extends Backbone.Marionette.ItemView
 			class: 'active'
 
 
-	template: Handlebars.compile($('#desktop-menu-item-template').html())

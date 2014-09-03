@@ -1,4 +1,7 @@
 class TextNoteView extends NoteView
+	template: App.templates['text-note']
+
+
 	attributes: ->
 		_(class: 'note note-theme text').defaults super
 
@@ -10,9 +13,6 @@ class TextNoteView extends NoteView
 
 	events: ->
 		_({ 'blur @ui.editor': '_onBlur' }).defaults super
-
-
-	template: Handlebars.compile($('#text-note-template').html())
 
 
 	_onDoubleClick: ->

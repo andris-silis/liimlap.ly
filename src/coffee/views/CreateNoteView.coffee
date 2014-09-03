@@ -1,5 +1,5 @@
 class CreateNoteView extends Backbone.Marionette.View
-	template: Handlebars.compile($('#create-note-template').html())
+	template: App.templates['create-note']
 
 
 	ui:
