@@ -7,6 +7,7 @@ class NotesController extends Marionette.Controller
 		@listenTo @app.vent, 'create:note', @_onCreateNote
 		@listenTo @app.vent, 'change:note-position', @_onChangeNotePosition
 		@listenTo @app.vent, 'change:note-text', @_onChangeNoteText
+		@listenTo @app.vent, 'change:note-image-url', @_onChangeNoteImageURL
 
 
 	_onChangeDesktop: (desktop) ->
@@ -28,3 +29,8 @@ class NotesController extends Marionette.Controller
 	_onChangeNoteText: (note, text) ->
 		note.save
 			text: text
+
+
+	_onChangeNoteImageURL: (note, url) ->
+		note.save
+			imageUrl: url

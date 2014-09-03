@@ -24,9 +24,21 @@ body {
 
 .note {
 	min-width: 200px;
+	max-width: 200px;
 	min-height: 200px;
 	padding: 14px 14px 0 14px;
 	position: absolute;
+
+	&:after {
+		bottom: -1em;
+		right: 1em;
+		border-width: 0.5em;
+	}
+
+	&:before {
+		bottom: -1em;
+		border-width: 1em 1em 0 0;
+	}
 
 	div:focus {
 		outline: none;
@@ -64,20 +76,6 @@ body {
 	   position: absolute;
 	   right: 0;
 	   border-style: solid;
-	}
-}
-
-
-.note {
-	&:after {
-		bottom: -1em;
-		right: 1em;
-		border-width: 0.5em;
-	}
-
-	&:before {
-		bottom: -1em;
-		border-width: 1em 1em 0 0;
 	}
 }
 

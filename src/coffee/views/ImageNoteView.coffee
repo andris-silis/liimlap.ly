@@ -4,3 +4,9 @@ class ImageNoteView extends NoteView
 
 	attributes: ->
 		_(class: 'note note-theme image').defaults super
+
+
+	_onDoubleClick: ->
+		url = prompt 'Enter URL'
+
+		@app.vent.trigger 'change:note-image-url', @model, url
