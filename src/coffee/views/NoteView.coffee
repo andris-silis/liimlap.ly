@@ -12,6 +12,11 @@ class NoteView extends Backbone.Marionette.ItemView
 		}
 
 
+	modelEvents: ->
+		{
+			change: 'render'
+		}
+
 	attributes: ->
 		{
 			style: 'top:' + @model.get('top') + 'px; left:' + @model.get('left') + 'px'
@@ -19,7 +24,6 @@ class NoteView extends Backbone.Marionette.ItemView
 
 
 	initialize: ({ @app }) ->
-		@listenTo @model, 'change', @render
 
 
 	onShow: ->
