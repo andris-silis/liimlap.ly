@@ -128,6 +128,7 @@ gulp.task('compile-handlebars', function () {
 gulp.task('watch', function () {
     gulp.watch(coffeeSrc, ['compile-coffee']);
     gulp.watch(sassSrc, ['compile-sass']);
+    gulp.watch(handlebarsSrc, ['compile-handlebars']);
 });
 
 
