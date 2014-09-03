@@ -5,6 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 // var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
+var sass = require('gulp-sass');
 
 
 var jsVendorSrc = [
@@ -47,6 +48,12 @@ var coffeeSrc = [
 ];
 
 
+
+var sassSrc = [
+    'sass/**/*.scss'
+];
+
+
 gulp.task('concat-vendor', function () {
 	gulp.src(jsVendorSrc)
 		.pipe(sourcemaps.init())
@@ -76,8 +83,16 @@ gulp.task('compile-coffee', function () {
 });
 
 
+gulp.task('compile-sass', function () {
+    gulp.src(sassSrc)
+        .pipe(sass())
+        .pipe(gulp.dest('./dist/css'));
+});
+
+
 gulp.task('watch', function () {
     gulp.watch(coffeeSrc, ['compile-coffee']);
+	gulp.watch(sassSrc, ['compile-sass']);
 });
 
 // gulp.task('watch', function () {
