@@ -7,7 +7,7 @@ var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 
 
-var js_vendor_src = [
+var jsVendorSrc = [
     'bower_components/jquery/dist/jquery.js',
     'bower_components/jquery-ui/jquery-ui.js',
     'bower_components/lodash/dist/lodash.underscore.js',
@@ -19,7 +19,7 @@ var js_vendor_src = [
 ];
 
 
-var coffee_src = [
+var coffeeSrc = [
 	// './src/**/*.coffee'
         './src/models/DesktopModel.coffee',
         './src/models/NoteModel.coffee',
@@ -48,7 +48,7 @@ var coffee_src = [
 
 
 gulp.task('vendor-concat', function () {
-	gulp.src(js_vendor_src)
+	gulp.src(jsVendorSrc)
 		.pipe(sourcemaps.init())
 		.on('error', gutil.log)
 		.pipe(concat('vendors.js'))
@@ -61,8 +61,8 @@ gulp.task('vendor-concat', function () {
 });
 
 
-gulp.task('coffee-compile', function () {
-	gulp.src(coffee_src)
+gulp.task('compile-coffee', function () {
+	gulp.src(coffeeSrc)
 		.pipe(sourcemaps.init())
 		.pipe(coffee({ bare: true }))
 		.on('error', gutil.log)
@@ -77,7 +77,7 @@ gulp.task('coffee-compile', function () {
 
 
 gulp.task('watch', function () {
-	gulp.watch(coffee_src, ['coffee-compile']);
+    gulp.watch(coffeeSrc, ['compile-coffee']);
 });
 
 // gulp.task('watch', function () {
