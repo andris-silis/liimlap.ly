@@ -6,6 +6,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
+var handlebars = require('gulp-handlebars');
+var wrap = require('gulp-wrap');
+var declare = require('gulp-declare');
 
 
 var jsVendorSrc = [
@@ -27,36 +30,40 @@ var cssVendorSrc = [
 
 
 var coffeeSrc = [
-	// './src/**/*.coffee'
-        './src/models/DesktopModel.coffee',
-        './src/models/NoteModel.coffee',
+        './src/coffee/models/DesktopModel.coffee',
+        './src/coffee/models/NoteModel.coffee',
 
-        './src/collections/DesktopsCollection.coffee',
-        './src/collections/NotesCollection.coffee',
+        './src/coffee/collections/DesktopsCollection.coffee',
+        './src/coffee/collections/NotesCollection.coffee',
 
-        './src/views/NoteView.coffee',
-        './src/views/TextNoteView.coffee',
-        './src/views/ImageNoteView.coffee',
-        './src/views/DesktopView.coffee',
+        './src/coffee/views/NoteView.coffee',
+        './src/coffee/views/TextNoteView.coffee',
+        './src/coffee/views/ImageNoteView.coffee',
+        './src/coffee/views/DesktopView.coffee',
 
-        './src/views/DesktopsMenuItemView.coffee',
-        './src/views/DesktopsMenuView.coffee',
-        './src/views/CreateNoteView.coffee',
-        './src/views/CreateDesktopView.coffee',
+        './src/coffee/views/DesktopsMenuItemView.coffee',
+        './src/coffee/views/DesktopsMenuView.coffee',
+        './src/coffee/views/CreateNoteView.coffee',
+        './src/coffee/views/CreateDesktopView.coffee',
 
 
-        './src/controllers/DesktopsController.coffee',
-        './src/controllers/NotesController.coffee',
-        './src/views/ApplicationLayoutView.coffee',
-        './src/DesktopsRouter.coffee',
+        './src/coffee/controllers/DesktopsController.coffee',
+        './src/coffee/controllers/NotesController.coffee',
+        './src/coffee/views/ApplicationLayoutView.coffee',
+        './src/coffee/DesktopsRouter.coffee',
 
-        './src/boot.coffee'
+        './src/coffee/boot.coffee'
 ];
 
 
 
 var sassSrc = [
     'sass/**/*.scss'
+];
+
+
+var handlebarsSrc = [
+    'src/handlebars-templates/**/*.hbs'
 ];
 
 
@@ -105,15 +112,38 @@ gulp.task('compile-sass', function () {
 });
 
 
+gulp.task('compile-handlebars', function(){
+  gulp.src(handlebarsSrc)
+    .pipe(handlebars())
+    .pipe(wrap('Handlebars.template(<%= contents %>)'))
+    .pipe(declare({
+      namespace: 'App.templates',
+      noRedeclare: true,
+    }))
+    .pipe(concat('templates.js'))
+    .pipe(gulp.dest('dist/js'));
+});
+
+
 gulp.task('watch', function () {
     gulp.watch(coffeeSrc, ['compile-coffee']);
     gulp.watch(sassSrc, ['compile-sass']);
 });
 
 
-gulp.task('build', ['compile-sass', 'compile-coffee', 'concat-vendor-css', 'concat-vendor-js'], function () {
+gulp.task(
+    'build',
+    [
+        'compile-sass',
+        'compile-coffee',
+        'compile-handlebars',
+        'concat-vendor-css',
+        'concat-vendor-js'
+    ],
+    function () {
 
-});
+    }
+);
 
 
 // gulp.task('watch', function () {
