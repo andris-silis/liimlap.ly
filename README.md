@@ -1,6 +1,6 @@
 Sticky notes in browser. Test assignment.
 
-Installation:
+Installation (npm and bower should be installed on machine):
 
 ```
 npm install
