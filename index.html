@@ -3,50 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Sticky notes</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-
         <link rel="stylesheet" href="dist/css/vendors.css">
         <link rel="stylesheet" href="dist/css/app.css">
-        <!-- <script src="js/vendor/modernizr-2.7.1.min.js"></script> -->
     </head>
     <body>
-        <script id="application-layout-template" type="text/x-handlebars-template">
-            <div class="grid no-gutters">
-                <div id="menu" class="menu unit one-fifth">
-                    <div id="add-note" class="add-note align-center"></div>
-                    <div id="desktops-menu"></div>
-                    <div id="add-desktop" class="plus align-center"></div>
-                </div>
-                <div id="desktop" class="desktop unit four-fifths"></div>
-            </div>
-        </script>
-
-        <script id="text-note-template" type="text/x-handlebars-template">
-            <div>{{{ text }}}</div>
-        </script>
-
-        <script id="image-note-template" type="text/x-handlebars-template">
-            {{ url }}
-        </script>
-
-        <script id="desktop-menu-item-template" type="text/x-handlebars-template">
-            <a href="#desktop/{{ id }}">{{ title }}</a>
-        </script>
-
-        <script id="create-note-template" type="text/x-handlebars-template">
-            <button class="note-button note-theme text" title="Add text note">Txt</button>
-            <button class="note-button note-theme image" title="Add image note">Img</button>
-        </script>
-
-        <script id="create-desktop-template" type="text/x-handlebars-template">
-            <button title="Add desktop">+</button>
-        </script>
-
         <script src="dist/js/vendors.js"></script>
+        <script src="dist/js/templates.js"></script>
         <script src="dist/js/app.js"></script>
     </body>
 </html>
