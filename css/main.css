@@ -17,16 +17,19 @@ body {
 }
 
 
+.desktop ul {
+	list-style-type: none;
+}
+
+
 .note {
 	min-width: 200px;
 	min-height: 200px;
 	padding: 14px 14px 0 14px;
 	position: absolute;
-	display: block;
 }
 
-.note div {
-	display: inline-block;
+.note div:focus {
 	outline: none;
 }
 
@@ -48,24 +51,43 @@ body {
    border-color: #3f2656 transparent;
 }
 
-.note:after {
+.note-theme:after {
    content: "";
    position: absolute;
-   bottom: -1em;
    left: 0;
-   right: 1em;
-   border-width: 0.5em;
    border-style: solid;
 }
 
-.note:before {
+.note-theme:before {
    content: "";
    position: absolute;
-   bottom: -1em;
    right: 0;
-   border-width: 1em 1em 0 0;
    border-style: solid;
 }
+
+.note:after {
+   bottom: -1em;
+   right: 1em;
+   border-width: 0.5em;
+}
+
+.note:before {
+   bottom: -1em;
+   border-width: 1em 1em 0 0;
+}
+
+.note-button:after {
+   bottom: -0.5em;
+   right: 0.5em;
+   border-width: 0.25em;
+}
+
+.note-button:before {
+   bottom: -0.5em;
+   border-width: 0.5em 0.5em 0 0;
+}
+
+/* // Folded corner */
 
 
 .menu {
@@ -132,13 +154,15 @@ body {
 	margin-top: 3em;
 }
 
-.add-note button {
+.note-button {
+	position:	relative; /* for folded corners to work */
 	display: inline-block;
-	height:	76px;
+	height:	60px;
 	width: 76px;
 	font-size: 1.8em;
 	margin: 0 1%;
 	color: rgba(0, 0, 0, 0.3);
+	padding-top: 14px;
 }
 
 
