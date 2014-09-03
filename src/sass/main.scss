@@ -83,6 +83,10 @@ body {
 
 
 .note-button {
+	&:focus {
+		outline: none;
+	}
+
 	&:after {
 	   bottom: -0.5em;
 	   right: 0.5em;
