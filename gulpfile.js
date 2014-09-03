@@ -58,7 +58,7 @@ var coffeeSrc = [
 
 
 var sassSrc = [
-    'sass/**/*.scss'
+    'src/sass/**/*.scss'
 ];
 
 
@@ -112,7 +112,7 @@ gulp.task('compile-sass', function () {
 });
 
 
-gulp.task('compile-handlebars', function(){
+gulp.task('compile-handlebars', function () {
   gulp.src(handlebarsSrc)
     .pipe(handlebars())
     .pipe(wrap('Handlebars.template(<%= contents %>)'))
