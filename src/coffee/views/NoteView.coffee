@@ -1,39 +1,39 @@
 class NoteView extends Backbone.Marionette.ItemView
-	template: App.templates['image-note']
+  template: App.templates['image-note']
 
 
-	tagName: 'li'
+  tagName: 'li'
 
 
-	events: ->
-		{
-			'dragstop': '_onDragStop'
-			'dblclick': '_onDoubleClick'
-		}
+  events: ->
+    {
+      'dragstop': '_onDragStop'
+      'dblclick': '_onDoubleClick'
+    }
 
 
-	modelEvents: ->
-		{
-			change: 'render'
-		}
+  modelEvents: ->
+    {
+      change: 'render'
+    }
 
-	attributes: ->
-		{
-			style: 'top:' + @model.get('top') + 'px; left:' + @model.get('left') + 'px'
-		}
-
-
-	initialize: ({ @app }) ->
+  attributes: ->
+    {
+      style: 'top:' + @model.get('top') + 'px; left:' + @model.get('left') + 'px'
+    }
 
 
-	onShow: ->
-		@$el.draggable(
-			containment: $('#desktop')
-		)
+  initialize: ({ @app }) ->
 
 
-	_onDragStop: (event, ui) ->
-		@app.vent.trigger 'change:note-position',
-			@model,
-			ui.position.top,
-			ui.position.left
+  onShow: ->
+    @$el.draggable(
+      containment: $('#desktop')
+    )
+
+
+  _onDragStop: (event, ui) ->
+    @app.vent.trigger 'change:note-position',
+      @model,
+      ui.position.top,
+      ui.position.left

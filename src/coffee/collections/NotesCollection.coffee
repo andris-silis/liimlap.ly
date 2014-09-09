@@ -1,8 +1,8 @@
 class NotesCollection extends Backbone.Collection
-	localStorage: new Backbone.LocalStorage 'notes'
+  localStorage: new Backbone.LocalStorage 'notes'
 
 
-	model: NoteModel
+  model: NoteModel
 
 
-	url: 'notes'
+  url: 'notes'

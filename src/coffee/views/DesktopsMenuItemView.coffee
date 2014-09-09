@@ -1,12 +1,12 @@
 class DesktopsMenuItemView extends Backbone.Marionette.ItemView
-	template: App.templates['desktop-menu-item']
+  template: App.templates['desktop-menu-item']
 
 
-	tagName: 'li'
+  tagName: 'li'
 
 
-	attributes: ->
-		if @model == @options.currentDesktop
-			class: 'active'
+  attributes: ->
+    if @model == @options.currentDesktop
+      class: 'active'
 
 

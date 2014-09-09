@@ -1,22 +1,22 @@
 class CreateDesktopView extends Backbone.Marionette.View
-	template: App.templates['create-desktop']
+  template: App.templates['create-desktop']
 
 
-	ui:
-		createDesktop: 'button'
+  ui:
+    createDesktop: 'button'
 
 
-	events:
-		'click @ui.createDesktop': '_addDesktop'
+  events:
+    'click @ui.createDesktop': '_addDesktop'
 
 
-	initialize: ({ @app }) ->
+  initialize: ({ @app }) ->
 
 
-	_addDesktop: ->
-		@app.vent.trigger 'create:desktop'
+  _addDesktop: ->
+    @app.vent.trigger 'create:desktop'
 
 
-	render: ->
-		@$el.html @template()
-		@
+  render: ->
+    @$el.html @template()
+    @

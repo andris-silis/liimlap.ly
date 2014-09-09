@@ -1,11 +1,11 @@
 class DesktopsCollection extends Backbone.Collection
-	localStorage: new Backbone.LocalStorage 'desktops'
+  localStorage: new Backbone.LocalStorage 'desktops'
 
 
-	url: 'desktops'
+  url: 'desktops'
 
 
-	createWithNextName: ->
-		number = @size() + 1
-		title = "Desktop #{number}"
-		@create(id: number, title: title)
+  createWithNextName: ->
+    number = @size() + 1
+    title = "Desktop #{number}"
+    @create(id: number, title: title)
