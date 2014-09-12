@@ -107,6 +107,7 @@ gulp.task('compile-coffee', function () {
 gulp.task('compile-sass', function () {
     gulp.src(sassSrc)
         .pipe(sass())
+        .on('error', gutil.log)
         .pipe(concat('app.css'))
         .pipe(gulp.dest('./dist/css'));
 });
@@ -115,6 +116,7 @@ gulp.task('compile-sass', function () {
 gulp.task('compile-handlebars', function () {
   gulp.src(handlebarsSrc)
     .pipe(handlebars())
+    .on('error', gutil.log)
     .pipe(wrap('Handlebars.template(<%= contents %>)'))
     .pipe(declare({
       namespace: 'App.templates',
